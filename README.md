@@ -86,14 +86,39 @@ It takes a masked binary image and calculates coordinates for all non-zero point
 It From step 6, we received the parameters of quadratic equation of two-lane lines. In image co-ordinate frame (u, v), by using v = 0 and v = fixed_look_ahead_point, the (u, v) coordinates of upper and lower lane line point can be calculated for both lane lines. Median of upper lane points will give upper lane center (highlighted by white circle) and from lower lane point lower lane center point (highlighted in green circle). Since camera is mounted on vehicle and has fixed orientation (assumption) the camera center and vehicle center can be assumed to be same. Vehicle center is highlighted in color red. By taking inverse perspective view of identified lane line pixels from step 4 and using weighted image, lane lines with blue and red color ; and original image can be blended to visualize output results.
 
 <p align="center">
-  <img width="250" height="150" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/Picture1.jpg">
+  <img width="400" height="250" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/Picture1.jpg">
 </p>
 <p align="center">
   Figure: Output from lane detection pipeline
 </p>
 
 ### 2) Road Sign Recognition:
-Given an on-track camera video, recognize the stop sign and school zone sign in the video and mark them using bounding boxes (MATLAB program / 2nd).
+Given an on-track camera video, recognize the stop sign and school zone sign in the video and mark them using bounding boxes (MATLAB program / 2nd). 
+
+Approach used: Machine learning using Convolutional Neural Network (CNN) 
+
+Advantages of using CNN:
+- High accuracy and performance in terms of detection time
+- Option of transfer learning
+- Requires training only on one neural network for multiple sign detection class.
+
+A machine learning based algorithm was used to determine road signs from the video frames. This algorithm was implemented in MATLAB using its default cascade object detector. To create a detector object file, we need to first train the algorithm with a bunch of positive and negative images. In this project, we are supposed to detect two distinct road signs, a STOP sign and a School sign.
+
+<p align="center">
+  <img width="500" height="150" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/signdetection.jpg">
+</p>
+<p align="center">
+  Figure: Sign detector process flow
+</p>
+
+<p align="center">
+  <img width="250" height="150" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/detectedsign.jpg">
+</p>
+<p align="center">
+  Figure: Sign detector example
+</p> 
+ 
+The sign detector gives the output in form of which sign is detected in given frame and predicted accuracy of sign. This information is then communicated to PC running lane detector. ‘STOP’, ‘SCHOOL’ or ‘Continue’ messages were sent in string/character format.
 
 ### 3) Communications: 
 Send the road sign information from the 2nd program to the 1st program through communications. The two programs can be on either the same computer or two different computers.
