@@ -37,7 +37,7 @@ One of the most challenging part of lane detection is to use appropriate methods
 The problem here is there are a lot of parameters that can be tuned; min and max thresholds, different color spaces, x and y direction and so on. Parameter space is very large, and it is very hard to hit a good solution just by the method of trial and error. After comparative study through research papers, solution based on HLS / HSV seemed to be perfect for colored lane lines. By using filters on colors and then on lightness parameters, it can robustly identify the blue lane lines from image. (This method can be used for any other as well, or when finding out lane from multiple colored lane lines). The only problem is that it is not very robust with strong shadows, where it can have a lot of intensity in some areas.
 
 <p align="center">
-  <img width="500" height="300" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/thresholding.jpg">
+  <img src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/thresholding.jpg">
 </p>
 
 
