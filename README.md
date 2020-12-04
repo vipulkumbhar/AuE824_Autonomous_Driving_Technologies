@@ -49,11 +49,14 @@ After getting binary image in the previous step, perspective transform was appli
 </p>
 
 <p align="center">
-  Region of interest
+  Figure: Region of interest
 </p>
 
 <p align="center">
   <img width="400" height="150" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/birdseyeview.jpg">
+</p>
+<p align="center">
+  Figure: Perspective transform (left) vs original image (right)
 </p>
 
 ##### 1.2 Distortion removal: 
