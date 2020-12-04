@@ -1,6 +1,6 @@
 # <p align="center"> Autonomous navigation on road </p>
 
-<align="center">
+<                                       
 ![Watch the video](https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/short_highquality_video.gif)
 </p>
 
