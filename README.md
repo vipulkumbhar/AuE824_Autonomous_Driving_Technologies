@@ -145,7 +145,7 @@ To design Stanley control, first camera frame co-ordinates need to be calculated
 
 From last step of autonomous lane detection, pixel co-ordinates of vehicle center, two points of lane center were derived which will be used for calculating image frame coordinates of same.
 <p align="center">
-  <img width="500" height="300" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/pixeltocamera2.jpg">
+  <img width="500" height="200" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/pixeltocamera2.jpg">
 </p>
 <p align="center">
   Figure: Pixel frame to camera frame transformation
@@ -154,7 +154,7 @@ From last step of autonomous lane detection, pixel co-ordinates of vehicle cente
 Since, Fu, Fv and u0, v0 where derived from camera calibration step. Yc is assumed to be 210mm (assuming road surface is flat, and camera is mounted at the center of vehicle). From all the steps above, we now have local frame coordinates (camera frame) which can be used for calculating steering angle through Stanley control.
 
 <p align="center">
-  <img width="400" height="400" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/vehicledepartureangle.jpg">
+  <img width="400" height="300" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/vehicledepartureangle.jpg">
 </p>
 <p align="center">
   Figure: Derivation of theta_e (Vehicle departure angle)
