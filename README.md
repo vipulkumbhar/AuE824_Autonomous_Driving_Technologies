@@ -72,11 +72,11 @@ This part of the pipeline was also very challenging to implement in a robust way
 ##### 1.6 Fitting quadratic lines to the masked pixels: 
 It takes a masked binary image and calculates coordinates for all non-zero points. Then these points are used to fit a second-order polynomial using np.polyfit() function. The part was to remember that horizontal position is dependent variable and vertical is independent. Therefor the fitting a function:
 <p align="center">
-  #### x = f(y) = a * y**2 + b * y + c
+  x = f(y) = a * y**2 + b * y + c
 </p>
 
 <p align="center">
-  <img width="400" height="150" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/slidingwindow2.jpg">
+  <img width="400" height="300" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/slidingwindow2.jpg">
 </p>
 <p align="center">
   Figure: Input image(top), perspective view(bottom-right) and final lane pixels with sliding box(bottom-left)
