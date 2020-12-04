@@ -23,6 +23,12 @@ To compute the camera the transformation matrix and distortion coefficients, we 
   <img width="500" height="300" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/camera_calibration.png">
 </p>
 
+##### 1.2 Distortion removal: 
+Calibration matrix applied to a distorted image (left) produces undistorted image (right)
+<p align="center">
+  <img width="500" height="300" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/calibrated%20image.jpg">
+</p>
+
 ### 2) Road Sign Recognition:
 Given an on-track camera video, recognize the stop sign and school zone sign in the video and mark them using bounding boxes (MATLAB program / 2nd).
 
