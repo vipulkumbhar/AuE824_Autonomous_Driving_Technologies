@@ -24,7 +24,7 @@ To compute the camera the transformation matrix and distortion coefficients, we 
 ##### 1.2 Distortion removal: 
 Calibration matrix applied to a distorted image (left) produces undistorted image (right)
 <p align="center">
-  <img width="350" height="150" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/calibrated%20image.jpg">
+  <img width="350" height="130" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/calibrated%20image.jpg">
 </p>
 
 ##### 1.3 Thresholding: 
