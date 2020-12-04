@@ -145,7 +145,7 @@ To design Stanley control, first camera frame co-ordinates need to be calculated
 
 From last step of autonomous lane detection, pixel co-ordinates of vehicle center, two points of lane center were derived which will be used for calculating image frame coordinates of same.
 <p align="center">
-  <img width="500" height="200" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/pixeltocamera2.jpg">
+  <img width="200" height="80" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/pixeltocamera2.jpg">
 </p>
 <p align="center">
   Figure: Pixel frame to camera frame transformation
