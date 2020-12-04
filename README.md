@@ -1,4 +1,4 @@
-# <p align="center"> Autonomous navigation on road </p>
+# <p align="center"> Autonomous Navigation on Road </p>
                               
 ![Watch the video](https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/short_highquality_video.gif)
 
