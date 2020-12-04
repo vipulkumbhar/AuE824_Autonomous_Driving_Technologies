@@ -176,9 +176,20 @@ Thus, steering angle is defined as:
 </p>
 
 ##### 4.3 HMI
+HMI to intuitively display control commands (e.g., STOP, SLOW DOWN) in the image at stop sign and school zone sign in the 1st program.
+
 <p align="center">
   <img width="750" height="450" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/17%20process%20flow%20.jpg">
 </p>
 <p align="center">
   Figure: Process flow-based display (easy to debug)
 </p> 
+
+###### Displayed information:
+1) Original frame with detected lanes embedded in it. Also, left and right lanes are colored differently so that user can see /check that detected lane lines are correct.
+2) Steering angle: Steering angle derived from Stanley control is displayed. For easier interpretation angle is displayed in degrees.
+3) Lane error: This is cross-track error (configurable, either in pixel coordinates or camera frame coordinates). This information can be used for determining effects of cross-track error on steering angle determined by Stanley control.
+4) FPS: frames per second processed by system. This information can be used for determining performance of system.
+5) Sign detected: Whenever sign detected information is conveyed by remote PC, it is displayed on screen (either ‘Stop sign detected’ or ‘school’ sign detected). As per sign detected big message is displayed in center of frame (Either ‘STOP’ or ‘Reduce speed’)
+6) Lane departure warning: If cross-track error is higher than pre-defined values, lane departure warning is displayed on screen.
+7) Vehicle center (red color circle), lane center at vehicle (green color circle) , lane center at some fixed distance from vehicle (white circle)
