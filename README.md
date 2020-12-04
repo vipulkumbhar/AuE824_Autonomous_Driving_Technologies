@@ -123,7 +123,22 @@ The sign detector gives the output in form of which sign is detected in given fr
 ### 3) Communications: 
 Send the road sign information from the 2nd program to the 1st program through communications. The two programs can be on either the same computer or two different computers.
 
+Establishing communication between two different computers running was very crucial in the project as lane detection and control and road sign recognition were carried out on two different computers. A User Datagram Protocol (UDP) was implemented for communication. The flow of server-client kind of architecture can be seen in the figure below.
+<p align="center">
+  <img width="250" height="150" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/UDP.jpg">
+</p>
+<p align="center">
+  Figure: Server-client type UDP based communication
+</p> 
+
+Since both the computers were using individual video feed for lane detection and sign recognition, the syncing between them was one of the major issues in communication. To overcome this issue, we decided to establish a two-way communication where a lane detection computer send a frame indexing signal to the sign recognizing computer. Sign recognizing computer will first check the video frame, store the results and will wait for the indexing signal. After receiving indexing signal, it will send the result of sign recognition to the lane detecting computer. Lane detecting computer will only proceed further after receiving the data from the second computer. This method solved the issue of video syncing but at the same time, it slows down the whole process as both the computer now need to wait for the confirmation from the other computer.
+
 ### 4) Vehicle Controls: 
 Design appropriate HMI to intuitively display control commands (e.g., STOP, SLOW DOWN) in the image at stop sign and school zone sign in the 1st program.
 
-
+<p align="center">
+  <img width="500" height="300" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/17%20process%20flow%20.jpg">
+</p>
+<p align="center">
+  Figure: Process flow-based display (easy to debug)
+</p> 
