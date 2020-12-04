@@ -137,7 +137,7 @@ From detected lane, calculate steering angle uding Stanley Control. Design appro
 To design Stanley control, first camera frame co-ordinates need to be calculated from pixel frame co-ordinates.
 
 <p align="center">
-  <img width="450" height="100" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/pixeltocamera.jpg">
+  <img width="450" height="150" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/pixeltocamera.jpg">
 </p>
 <p align="center">
   Figure: Pixel frame to camera frame transformation
