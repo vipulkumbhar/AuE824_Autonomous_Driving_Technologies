@@ -168,11 +168,11 @@ Vehicle motion model can be defined as:
 </p>
 Here, x, y, 𝜃 are vehicles pose while 𝜑 is steering angle, V is vehicle velocity. Then the Stanley method is used to find the steering angle 𝛿 to drive the vehicle (front axle). The closest point of the desired path (efa), it will be perpendicular distance from vehicle front axle point to line. Along with the tangent of the desired path at the closest point: 
 <p align="center">
-  <img width="300" height="100" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/stanleycontrol2.jpg">
+  <img width="300" height="300" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/stanleycontrol2.jpg">
 </p>
 Thus, steering angle is defined as:
 <p align="center">
-  <img width="300" height="100" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/steeringangle.png">
+  <img width="700" height="400" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/steeringangle.png">
 </p>
 
 ##### 4.3 HMI
