@@ -172,7 +172,7 @@ Here, x, y, 𝜃 are vehicles pose while 𝜑 is steering angle, V is vehicle ve
 </p>
 Thus, steering angle is defined as:
 <p align="center">
-  <img width="700" height="400" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/steeringangle.png">
+  <img width="700" height="370" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/steeringangle.png">
 </p>
 
 ##### 4.3 HMI
