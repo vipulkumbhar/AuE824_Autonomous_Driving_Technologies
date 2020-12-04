@@ -43,13 +43,15 @@ The problem here is there are a lot of parameters that can be tuned; min and max
 
 ##### 1.4 Region of interest and perspective transform (Birds eye view):
 After getting binary image in the previous step, perspective transform was applied to it to change it from camera view into top-down view.
+
 <p align="center">
-  <img src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/birdseyeview.jpg">
+  <img width="500" height="300" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/ROI.jpg">
 </p>
 
 <p align="center">
-  <img src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/ROI.jpg">
+  <img width="500" height="300" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/birdseyeview.jpg">
 </p>
+
 
 
 ##### 1.2 Distortion removal: 
