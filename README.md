@@ -10,7 +10,7 @@ Personal cars and commercial trucks are continuously improving the driver experi
 
 ## Projects tasks
 ### 1) Autonomous lane keeping: 
-Given an on-track camera video, calculate the steering angle of the vehicle to track the lane, and design appropriate HMI to intuitively display the steering control in the image (Python program / 1st). 
+Given an on-track camera video, detect the left and right lane markers (Python program / 1st). 
 
 #### Pipeline for lane detection
 ##### 1.1 Camera calibration:
@@ -130,9 +130,38 @@ Establishing communication between two different computers running was very cruc
 
 Since both the computers were using individual video feed for lane detection and sign recognition, the syncing between them was one of the major issues in communication. To overcome this issue, we decided to establish a two-way communication where a lane detection computer send a frame indexing signal to the sign recognizing computer. Sign recognizing computer will first check the video frame, store the results and will wait for the indexing signal. After receiving indexing signal, it will send the result of sign recognition to the lane detecting computer. Lane detecting computer will only proceed further after receiving the data from the second computer. This method solved the issue of video syncing but at the same time, it slows down the whole process as both the computer now need to wait for the confirmation from the other computer.
 
-### 4) Vehicle Controls: 
-Design appropriate HMI to intuitively display control commands (e.g., STOP, SLOW DOWN) in the image at stop sign and school zone sign in the 1st program.
+### 4) Vehicle Controls and HMI: 
+From detected lane, calculate steering angle uding Stanley Control. Design appropriate HMI to intuitively display control commands (e.g., STOP, SLOW DOWN) in the image at stop sign and school zone sign in the 1st program.
 
+##### 4.1 Inverse Projection 
+To design Stanley control, first camera frame co-ordinates need to be calculated from pixel frame co-ordinates.
+
+<p align="center">
+  <img width="450" height="100" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/pixeltocamera.jpg">
+</p>
+<p align="center">
+  Figure: Pixel frame to camera frame transformation
+</p> 
+
+From last step of autonomous lane detection, pixel co-ordinates of vehicle center, two points of lane center were derived which will be used for calculating image frame coordinates of same.
+<p align="center">
+  <img width="500" height="300" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/pixeltocamera2.jpg">
+</p>
+<p align="center">
+  Figure: Pixel frame to camera frame transformation
+</p> 
+
+Since, Fu, Fv and u0, v0 where derived from camera calibration step. Yc is assumed to be 210mm (assuming road surface is flat, and camera is mounted at the center of vehicle). From all the steps above, we now have local frame coordinates (camera frame) which can be used for calculating steering angle through Stanley control.
+
+<p align="center">
+  <img width="400" height="400" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/vehicledepartureangle.jpg">
+</p>
+<p align="center">
+  Figure: Derivation of theta_e (Vehicle departure angle)
+</p> 
+
+
+##### 4.3 HMI
 <p align="center">
   <img width="500" height="300" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/17%20process%20flow%20.jpg">
 </p>
