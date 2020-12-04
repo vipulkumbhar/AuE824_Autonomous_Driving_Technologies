@@ -82,9 +82,15 @@ It takes a masked binary image and calculates coordinates for all non-zero point
   Figure: Input image(top), perspective view(bottom-right) and final lane pixels with sliding box(bottom-left)
 </p>
 
+##### 1.7 Computation of lane center, vehicle center and visualize lane: 
+It From step 6, we received the parameters of quadratic equation of two-lane lines. In image co-ordinate frame (u, v), by using v = 0 and v = fixed_look_ahead_point, the (u, v) coordinates of upper and lower lane line point can be calculated for both lane lines. Median of upper lane points will give upper lane center (highlighted by white circle) and from lower lane point lower lane center point (highlighted in green circle). Since camera is mounted on vehicle and has fixed orientation (assumption) the camera center and vehicle center can be assumed to be same. Vehicle center is highlighted in color red. By taking inverse perspective view of identified lane line pixels from step 4 and using weighted image, lane lines with blue and red color ; and original image can be blended to visualize output results.
 
-
-##### 1.2 Distortion removal: 
+<p align="center">
+  <img width="250" height="150" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/Picture1.jpg">
+</p>
+<p align="center">
+  Figure: Output from lane detection pipeline
+</p>
 
 ### 2) Road Sign Recognition:
 Given an on-track camera video, recognize the stop sign and school zone sign in the video and mark them using bounding boxes (MATLAB program / 2nd).
