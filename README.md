@@ -20,7 +20,7 @@ Given an on-track camera video, calculate the steering angle of the vehicle to t
 To compute the camera the transformation matrix and distortion coefficients, we use multiple pictures of a chessboard on a flat surface taken by the same camera. OpenCV has a convenient method called FindChessboardCorners that will identify the points where black and white squares intersect and reverse engineer the distortion matrix this way. The image below shows the identified chessboard corners traced on a sample image and camera parameters computed from it.
 
 <p align="center">
-  <img width="300" height="170" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/camera_calibration.png">
+  <img width="250" height="150" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/camera_calibration.png">
 </p>
 
 ##### 1.2 Distortion removal: 
@@ -59,8 +59,31 @@ After getting binary image in the previous step, perspective transform was appli
   Figure: Perspective transform (left) vs original image (right)
 </p>
 
-##### 1.2 Distortion removal: 
-##### 1.2 Distortion removal: 
+##### 1.5 Sliding window methods to detect lane line pixels: 
+This part of the pipeline was also very challenging to implement in a robust way. The goal here is to create a mask for left and right road lines to only keep pixels of the lines and not anything else. First, we get initial positions of lanes by using half of the image to calculate histogram and detect 2 peaks. Then, we split input image into horizontal strips. After that, for each strip, we try to detect two peaks, this is where centers of lanes are. Then we also create two empty (zero-valued) masks for left and right lane. For each peak we will take a predefined no. of pixel window to each side of each peak and make this window one-valued in the mask. After we did this, we will have two masks that we can apply to the binary image. After we have 2 fitted lines, we can simplify the search for masks. We can argue that lines in two consecutive frames will be close to each other. Therefore, the mask can be calculated as windows sitting on the fitted polynomial, which really speed up calculations.
+
+<p align="center">
+  <img width="400" height="150" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/slidingwindow.jpg">
+</p>
+<p align="center">
+  Figure: Histogram analysis (left image) to find two distinct lane lines
+</p>
+
+##### 1.6 Fitting quadratic lines to the masked pixels: 
+It takes a masked binary image and calculates coordinates for all non-zero points. Then these points are used to fit a second-order polynomial using np.polyfit() function. The part was to remember that horizontal position is dependent variable and vertical is independent. Therefor the fitting a function:
+<p align="center">
+  #### x = f(y) = a * y**2 + b * y + c
+</p>
+
+<p align="center">
+  <img width="400" height="150" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/slidingwindow2.jpg">
+</p>
+<p align="center">
+  Figure: Input image(top), perspective view(bottom-right) and final lane pixels with sliding box(bottom-left)
+</p>
+
+
+
 ##### 1.2 Distortion removal: 
 
 ### 2) Road Sign Recognition:
