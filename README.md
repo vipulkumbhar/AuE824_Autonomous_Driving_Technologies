@@ -29,20 +29,29 @@ Calibration matrix applied to a distorted image (left) produces undistorted imag
   <img width="500" height="300" src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/calibrated%20image.jpg">
 </p>
 
-##### 1.2 Thresholding: 
+##### 1.3 Thresholding: 
 One of the most challenging part of lane detection is to use appropriate methods for converting RGB image to binary image that only consist of lane lines. For this several methods were explored including: 
 - RGB image - > Grayscale image -> magnitude-based thresholding
 - RGB -> Grayscale -> directional sobel filter
-- RGB –> HLS -> Sobel on L channel -> Threshold on all channels
+- RGB –> HLS -> Sobel on L channel -> Threshold on all channels 
+
 The problem here is there are a lot of parameters that can be tuned; min and max thresholds, different color spaces, x and y direction and so on. Parameter space is very large, and it is very hard to hit a good solution just by the method of trial and error. After comparative study through research papers, solution based on HLS / HSV seemed to be perfect for colored lane lines. By using filters on colors and then on lightness parameters, it can robustly identify the blue lane lines from image. (This method can be used for any other as well, or when finding out lane from multiple colored lane lines). The only problem is that it is not very robust with strong shadows, where it can have a lot of intensity in some areas.
 
 <p align="center">
   <img src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/thresholding.jpg">
 </p>
 
+##### 1.4 Region of interest and perspective transform (Birds eye view):
+After getting binary image in the previous step, perspective transform was applied to it to change it from camera view into top-down view.
+<p align="center">
+  <img src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/birdseyeview.jpg">
+</p>
+
+<p align="center">
+  <img src="https://github.com/vipulkumbhar/AuE824_Autonomous_Driving_Technologies/blob/master/AuE8240_Team8/Presentation/ROI.jpg">
+</p>
 
 
-##### 1.2 Distortion removal: 
 ##### 1.2 Distortion removal: 
 ##### 1.2 Distortion removal: 
 ##### 1.2 Distortion removal: 
